@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Clonar o repositório') {
             steps {
-                git branch: 'main', url: 'https://github.com/beatrism/iu-cypress-2.git'
+                git branch: 'main', url: 'https://github.com/beatrism/testes-api-rest.git'
             }
         }
 
@@ -18,6 +18,13 @@ pipeline {
                             }
                     }
         }
+
+        stage('Subir servidor') {
+            steps {
+                 nodejs('node'){
+                    bat 'npx serverest'
+                }
+                        }
     
         stage('Executar Testes') {
             steps {
