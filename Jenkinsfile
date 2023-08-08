@@ -22,7 +22,6 @@ pipeline {
         stage('Subir servidor e Executar Testes') {
             steps {
                  nodejs('node'){
-                    bat 'npx serverest'
                     bat 'npx cypress run'
         
                 }
