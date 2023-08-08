@@ -23,13 +23,11 @@ pipeline {
             steps {
                  nodejs('node'){
                     bat 'npx serverest'
-                }
-                        }
-            steps {
-                 nodejs('node'){
                     bat 'npx cypress run'
+        
                 }
                         }
+            
         }
     
 
