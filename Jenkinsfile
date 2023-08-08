@@ -19,22 +19,21 @@ pipeline {
                     }
         }
 
-        stage('Subir servidor') {
+        stage('Subir servidor e Executar Testes') {
             steps {
                  nodejs('node'){
                     bat 'npx serverest'
                 }
                         }
-    
-        stage('Executar Testes') {
             steps {
                  nodejs('node'){
                     bat 'npx cypress run'
                 }
                         }
         }
+    
+
 }
     
     
 }
-    
